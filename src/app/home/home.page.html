@@ -7,7 +7,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
     <ion-card>
         <img src="assets/img/Duoc.png" />
         <ion-card-header>
@@ -15,7 +14,6 @@
             <ion-card-title>Porfavor Inicie Sesion con suenta Duoc</ion-card-title>
         </ion-card-header>
     </ion-card>
-
     <ion-item>
         <ion-label position="floating">Usuario</ion-label>
         <ion-input type="text" [(ngModel)]="NombreU"></ion-input>
@@ -26,12 +24,16 @@
         <ion-input type="password"></ion-input>
     </ion-item>
     <br>
-
-
     <ion-button expand="full" (click)="logearse()">
         Iniciar Sesion
         <ion-icon name="checkmark"></ion-icon>
     </ion-button>
+    <ion-button expand="full" (click)="registrar()">
+        Registrar una cuenta
+        <ion-icon name="checkmark"></ion-icon>
+    </ion-button>
+
+
     <ion-card>
         <ion-item>
             <ion-label>¿Olvidaste tu contraseña?</ion-label>

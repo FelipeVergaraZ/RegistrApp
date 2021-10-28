@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -16,6 +18,13 @@ export class HomePage {
       state:{NombreU:this.NombreU}
     };
     this.router.navigate(['/inicio'],navigationExtra);
+  }
+
+  registrar(){
+    let navigationExtra: NavigationExtras={
+      state:{NombreU:this.NombreU}
+    };
+    this.router.navigate(['/registrar'],navigationExtra);
   }
   recuperar(){
     this.router.navigate(['/recover']);
