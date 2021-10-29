@@ -19,6 +19,12 @@ export class HomePage {
     };
     this.router.navigate(['/inicio'],navigationExtra);
   }
+  logearse2(){
+    let navigationExtra: NavigationExtras={
+      state:{NombreU:this.NombreU}
+    };
+    this.router.navigate(['/inicio2'],navigationExtra);
+  }
 
   registrar(){
     let navigationExtra: NavigationExtras={
