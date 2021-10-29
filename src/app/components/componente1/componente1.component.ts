@@ -79,6 +79,8 @@ export class Componente1Component implements OnInit {
         );
     }
   }
-
+  volver(){
+    this.router.navigate(['/home']);
+  }
 
 }

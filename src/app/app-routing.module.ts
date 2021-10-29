@@ -31,11 +31,6 @@ const routes: Routes = [
     path: 'not-found',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-  {
-    path: 'componente',
-    loadChildren: () => import('./componente/componente.module').then( m => m.ComponentePageModule)
-  },
-
 ];
 
 @NgModule({

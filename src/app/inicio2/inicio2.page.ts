@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable eqeqeq */
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable @typescript-eslint/quotes */
@@ -23,8 +24,14 @@ export class Inicio2Page{
     body:""
   };
 
-  constructor(private router: Router, private api: APIClientService) { }
-
+  constructor(private router: Router, private api: APIClientService) {
+    this.router.navigate(['inicio2/alumnos'])
+}
+  segmentChanged($event){
+    console.log($event)
+    let direccion=$event.detail.value
+    this.router.navigate(['inicio2/'+direccion])
+  }
 
 
   ionViewWillEnter(){
@@ -81,5 +88,7 @@ export class Inicio2Page{
     }
   }
 
-
+  volver(){
+    this.router.navigate(['/home']);
+  }
 }
