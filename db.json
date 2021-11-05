@@ -2,19 +2,19 @@
   "users": [
     {
       "id": 1,
-      "name": "UsuarioPrueba",
-      "username": "Usuario de prueba 1",
+      "name": "Alumno1",
+      "username": "Alumno de prueba 1",
       "email": "Usu1@duocuc.cl"
     },
     {
       "id": 2,
-      "name": "UsuarioPrueba2",
-      "username": "Usuario de prueba 2",
+      "name": "AlumnoPrueba2",
+      "username": "Alumno de prueba 2",
       "email": "Usu2@duocuc.cl"
     },
     {
       "id": 3,
-      "name": "UsuarioPrueba3",
+      "name": "AlumnoPrueba3",
       "username": "Usuario de prueba 3",
       "email": "Usu3@duocuc.cl"
     }
@@ -23,15 +23,15 @@
     {
       "userId": 1,
       "Id": null,
-      "title": "Titulo1",
-      "body": "cuerpo1",
+      "title": "05/11/2021",
+      "body": "Presente",
       "id": 1
     },
     {
       "userId": 3,
       "Id": null,
-      "title": "titulo2",
-      "body": "cuerpo2",
+      "title": "01/11/2021",
+      "body": "Presente",
       "id": 2
     }
   ]

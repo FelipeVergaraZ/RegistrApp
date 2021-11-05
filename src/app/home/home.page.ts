@@ -1,6 +1,7 @@
 /* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
@@ -9,11 +10,35 @@ import { ToastController } from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  formularioLogin: FormGroup;
   NombreU: any;
-  constructor(private router: Router){}
+  constructor(private router: Router, public fb: FormBuilder, public toastController: ToastController){
 
-  logearse(){
+    this.formularioLogin = this.fb.group({
+      NombreU : new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+
+    });
+  }
+
+
+  async logearse(){
+
+    let f =this.formularioLogin.value;
+    let usuario = JSON.parse(localStorage.getItem('usuario'));
+
+    // eslint-disable-next-line eqeqeq
+    if(usuario.nombre == f.nombre && usuario.password == f.password){
+      console.log ('ingresado');
+    }else{
+      const toast = await this.toastController.create({
+        message: 'Los datos no son correctos',
+        duration: 5000
+      });
+      toast.present();
+      return;
+    }
     let navigationExtra: NavigationExtras={
       state:{NombreU:this.NombreU}
     };
@@ -34,6 +59,9 @@ export class HomePage {
   }
   recuperar(){
     this.router.navigate(['/recover']);
+  }
+  ngOnInit() {
+
   }
 
 

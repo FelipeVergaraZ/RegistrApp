@@ -14,24 +14,29 @@
             <ion-card-title>Porfavor Inicie Sesion con suenta Duoc</ion-card-title>
         </ion-card-header>
     </ion-card>
-    <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="NombreU"></ion-input>
-    </ion-item>
+
+    <form [formGroup]= "formularioLogin">
+        <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="NombreU" formControlName="NombreU"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+    </form>
+
     <br>
     <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-button  (click)="logearse()">
+            Iniciar Sesion
+            <ion-icon name="checkmark"></ion-icon>
+        </ion-button>
+        <ion-button (click)="logearse2()">
+            <ion-icon name="checkmark"></ion-icon>
+        </ion-button>
     </ion-item>
-    <br>
-    <ion-button (click)="logearse()">
-        Iniciar Sesion
-        <ion-icon name="checkmark"></ion-icon>
-    </ion-button>
-    <ion-button (click)="logearse2()">
-        Iniciar Sesion2
-        <ion-icon name="checkmark"></ion-icon>
-    </ion-button>
     <ion-button expand="full" (click)="registrar()">
         Registrar una cuenta
         <ion-icon name="checkmark"></ion-icon>
