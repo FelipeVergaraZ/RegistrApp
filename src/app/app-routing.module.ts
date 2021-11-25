@@ -30,7 +30,7 @@ const routes: Routes = [
     loadChildren: () => import('./inicio2/inicio2.module').then( m => m.Inicio2PageModule)
   },
   {
-    path: 'not-found',
+    path: '**',
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 ];
