@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { AlertController,} from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as Bounce from 'bounce.js';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 
 @Component({
@@ -14,8 +13,7 @@ export class InicioPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   NombreU: string;
 
-  // eslint-disable-next-line max-len
-  constructor(private activeRoute: ActivatedRoute,private router: Router, public alertController: AlertController, private barcodeScanner: BarcodeScanner) {
+  constructor(private activeRoute: ActivatedRoute,private router: Router, public alertController: AlertController) {
     this.activeRoute.queryParamMap.subscribe(params=>{
       if(this.router.getCurrentNavigation().extras.state){
         this.NombreU=this.router.getCurrentNavigation().extras.state.NombreU;
@@ -26,16 +24,6 @@ export class InicioPage implements OnInit {
   volver(){
     this.router.navigate(['/home']);
   }
-
-
-  escaner(){
-  this.barcodeScanner.scan().then(barcodeData => {
-    console.log('Barcode data', barcodeData);
-  }).catch(err => {
-      console.log('Error', err);
-  });
-
-}
 
   alerta(){
     this.presentAlert();
